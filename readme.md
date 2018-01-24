@@ -9,7 +9,7 @@ It's a simple web project built by Spring Boot
 * MySQL
 * Bootstrap 4.0
 
-###Feature
+### Feature
 
 * A score dashboard.
 * Team info.
