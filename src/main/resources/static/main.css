@@ -14,33 +14,33 @@
 
 .mouseover {
     border-color: dodgerblue;
-    box-shadow: 0 0 20px -5px ;
+    box-shadow: 0 0 20px -5px;
 }
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.head-nav{
+.head-nav {
     /* 我们希望 header 采用固定的高度，只占用必须的空间 */
     /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 0 0 auto;
 }
 
-.main-content{
+.main-content {
     /* 将 flex-grow 设置为1，该元素会占用全部可使用空间
        而其他元素该属性值为0，因此不会得到多余的空间*/
     /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 1 0 auto;
 }
 
-.foot-nav{
+.foot-nav {
     /* 和 header 一样，footer 也采用固定高度*/
     /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 0 0 auto;

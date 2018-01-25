@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class OwlScore implements Comparable<OwlScore>{
+public class OwlScore implements Comparable<OwlScore> {
 
     @Id
     private Integer TeamId;
@@ -74,15 +74,15 @@ public class OwlScore implements Comparable<OwlScore>{
     @Override
     public int compareTo(OwlScore o) {
         //降序排列，设定大于为-1，小于+1，等于0
-        if (this.Win>o.getWin())
+        if (this.Win > o.getWin())
             return -1;
-        else if(this.Win==o.getWin()){
-            if(this.Lose<o.getLose())
+        else if (this.Win.equals(o.getWin())) {
+            if (this.Lose < o.getLose())
                 return -1;
-            else if (this.Lose==o.getLose())
-                if(this.NameAbbr.compareTo(o.getNameAbbr())<0)
+            else if (this.Lose.equals(o.getLose()))
+                if (this.NameAbbr.compareTo(o.getNameAbbr()) < 0)
                     return -1;
-                else if(this.NameAbbr.compareTo(o.getNameAbbr())==0)
+                else if (this.NameAbbr.compareTo(o.getNameAbbr()) == 0)
                     return 0;
         }
         return 1;

@@ -15,13 +15,13 @@ public class TeamInfoController {
     private TeamInfoRepository teamInfoRepository;
 
     @GetMapping(value = "/teaminfo")
-    public List<TeamInfo> TeamList(){
+    public List<TeamInfo> TeamList() {
         return teamInfoRepository.findAll();
     }
 
     @GetMapping(value = "/teaminfo/{NameAbbr}")
-    public TeamInfo TeamOne(@PathVariable("NameAbbr") String NameAbbr){
-        List<TeamInfo> teamInfos=teamInfoRepository.findAll();
+    public TeamInfo TeamOne(@PathVariable("NameAbbr") String NameAbbr) {
+        List<TeamInfo> teamInfos = teamInfoRepository.findAll();
 
         for (TeamInfo t : teamInfos) {
             if (t.getNameAbbr().equals(NameAbbr))

@@ -59,20 +59,20 @@ function teamAjax() {
 
 function CardsGenerate(teamlist) {
     var maincont = document.getElementById('maincont');
-    for(var i=0;i<teamlist.team.length;i++){
+    for (var i = 0; i < teamlist.team.length; i++) {
 
-        if(GetQueryString("abbr")===teamlist.team[i].nameAbbr){
+        if (GetQueryString("abbr") === teamlist.team[i].nameAbbr) {
             createButton(maincont);
-            createCard(maincont,teamlist.team[i]);
-            createInfoCard(maincont,teamlist.team[i]);
-            var n=document.getElementById(teamlist.team[i].nameAbbr);
-            n.setAttribute("onclick","");
+            createCard(maincont, teamlist.team[i]);
+            createInfoCard(maincont, teamlist.team[i]);
+            var n = document.getElementById(teamlist.team[i].nameAbbr);
+            n.setAttribute("onclick", "");
             return;
         }
 
     }
-    for(var j=0;j<teamlist.team.length;j++)
-        createCard(maincont,teamlist.team[j]);
+    for (var j = 0; j < teamlist.team.length; j++)
+        createCard(maincont, teamlist.team[j]);
 
     // for (var i = 0; i < teamlist.team.length; i++)
     //
@@ -81,29 +81,29 @@ function CardsGenerate(teamlist) {
     function createButton(maincont) {
         var part = document.createElement("div");
         maincont.appendChild(part);
-        part.outerHTML="    <div class=\"row\" style=\"margin: 20px;\">\n" +
+        part.outerHTML = "    <div class=\"row\" style=\"margin: 20px;\">\n" +
             "        <div class=\"col\">\n" +
             "            <button class=\"btn btn-primary\" onclick=\"ref()\">Show All Team</button>\n" +
             "        </div>\n" +
             "    </div>";
     }
 
-    function createInfoCard(maincont,info) {
-        var infoCard =document.createElement("div");
+    function createInfoCard(maincont, info) {
+        var infoCard = document.createElement("div");
         var abbr = info.nameAbbr;
         var name = info.teamName;
         var region = info.region;
         var pcolor = info.primaryColor;
         var acolor = info.accentColor;
         maincont.appendChild(infoCard);
-        infoCard.outerHTML="    <div id=\""+abbr+"-info\" class=\"card orgi-info\" onmouseover=\"omovinfo('"+abbr+"-info','"+acolor+"')\" onmouseleave=\"omleinfo('"+abbr+"-info','"+pcolor+"','"+acolor+"')\">\n" +
+        infoCard.outerHTML = "    <div id=\"" + abbr + "-info\" class=\"card orgi-info\" onmouseover=\"omovinfo('" + abbr + "-info','" + acolor + "')\" onmouseleave=\"omleinfo('" + abbr + "-info','" + pcolor + "','" + acolor + "')\">\n" +
             "        <div class=\"container\">\n" +
             "            <div class=\"row align-items-center\">\n" +
             "                <div class=\"col-sm\">\n" +
             "                    <div class=\"container\">\n" +
-            "                        <h3 style=\"margin: 10px\">"+name+"</h3>\n" +
+            "                        <h3 style=\"margin: 10px\">" + name + "</h3>\n" +
             "                        <div class=\"w-100\"></div>\n" +
-            "                        <p style=\"margin: 10px\">"+region+"</p>\n" +
+            "                        <p style=\"margin: 10px\">" + region + "</p>\n" +
             "                        <div class=\"w-100\"></div>\n" +
             "                        <p style=\"margin: 10px\">FULL TEAM INTRODUCE (UNDER CONSTRUCT)</p>\n" +
             "                    </div>\n" +
@@ -111,7 +111,7 @@ function CardsGenerate(teamlist) {
             "            </div>\n" +
             "        </div>\n" +
             "    </div>";
-        omleinfo(abbr+"-info", pcolor, acolor);
+        omleinfo(abbr + "-info", pcolor, acolor);
     }
 
     function createCard(maincont, info) {
@@ -174,22 +174,20 @@ function omleinfo(id, pcolor, acolor) {
 }
 
 
-function choice() {
-    var team = GetQueryString('abbr');
-    var info = document.getElementById(team);
-    info.style.display = "block";
-}
-
-
 function jump(abbr) {
     window.location.href = "/team?abbr=" + abbr;
 }
 
 
+/**
+ * @return {null}
+ */
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]);
+    if (r != null) {
+        return unescape(r[2]);
+    }
     return null;
 }
 

@@ -15,14 +15,14 @@ public class ScoreController {
     private ScoreRepository scoreRepository;
 
     @GetMapping(value = "/scores")
-    public List<OwlScore> ScoreList(){
-        List<OwlScore> owlScores=scoreRepository.findAll();
+    public List<OwlScore> ScoreList() {
+        List<OwlScore> owlScores = scoreRepository.findAll();
         Collections.sort(owlScores);
         return owlScores;
     }
 
     @GetMapping(value = "/scores/{id}")
-    public OwlScore ScoreOne(@PathVariable("id") Integer id){
+    public OwlScore ScoreOne(@PathVariable("id") Integer id) {
         return scoreRepository.findOne(id);
     }
 }
