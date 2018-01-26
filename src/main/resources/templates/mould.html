@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<nav th:fragment="footer" id="footer" class="navbar navbar-dark bg-dark foot-nav">
+    <!-- Navbar content -->
+    <span class="navbar-text">
+        <i>A SpringBoot Demo By Liuyanyi.</i>
+    </span>
+    <span class="navbar-text">
+        <i>Data from</i>
+        <a href="http://overwatchleague.com"><i>overwatchleague.com</i></a>
+    </span>
+</nav>
+
+<nav th:fragment="header (s1 , s2)" class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark head-nav">
+    <!-- Navbar content -->
+    <a class="navbar-brand" href="/">OWL DashBoard</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li th:class="${s1==1}? 'nav-item active' : 'nav-item' ">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li th:class="${s2==1}? 'nav-item active' : 'nav-item' ">
+                <a class="nav-link" href="/team">Team</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+</body>
+</html>

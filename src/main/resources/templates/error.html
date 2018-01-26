@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,27 +11,8 @@
 </head>
 <body>
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark head-nav">
-    <!-- Navbar content -->
-    <a class="navbar-brand" href="/">OWL DashBoard</a>
+<div th:replace="mould :: header (0,0)"></div>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/team">Team</a>
-            </li>
-        </ul>
-    </div>
-
-</nav>
 
 <div class="container main-content">
 
@@ -47,17 +28,7 @@
 
 </div>
 
-<nav id="footer" class="navbar navbar-dark bg-dark foot-nav">
-    <!-- Navbar content -->
-    <span class="navbar-text">
-        <i>A SpringBoot Demo By Liuyanyi.</i>
-    </span>
-    <span class="navbar-text">
-        <i>Data from</i>
-        <a href="http://overwatchleague.com"><i>overwatchleague.com</i></a>
-    </span>
-</nav>
-
+<div th:replace="mould :: footer"></div>
 
 <script src="webjars/jquery/3.2.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
