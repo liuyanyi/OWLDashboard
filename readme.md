@@ -29,3 +29,7 @@ The project need to adjust the configuration file.
 Add your own Database in `application-template.yml`and rename it to `application.yml`
 
 As well, you should also use `Data.sql` to import data.
+
+### TODO
+
+Add Viedo player for every competition
