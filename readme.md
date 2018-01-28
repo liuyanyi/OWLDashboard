@@ -28,8 +28,16 @@ The project need to adjust the configuration file.
 
 Add your own Database in `application-template.yml`and rename it to `application.yml`
 
+Add your own SSL info in `application.yml`, HTTP port should config in `OwlDashBoardApplication.java`
+
+If you don't need HTTPS, you can delete SSL config in `application.yml` and `OwlDashBoardApplication.java`
+
 As well, you should also use `Data.sql` to import data.
 
 ### TODO
 
-Add Viedo player for every competition
+Add Spring Security Demo.
+
+Add competition information.
+
+Add Viedo player for every competition.
